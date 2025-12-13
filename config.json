@@ -1,0 +1,35 @@
+{
+  "project": {
+    "name": "Dengus Cab Updater",
+    "version": "1.0.0",
+    "description": "One-click firmware updater for Dengus Cab"
+  },
+  "device": {
+    "chip": "ESP32-S3",
+    "baudrate": 921600,
+    "flashMode": "dio",
+    "flashFreq": "80m",
+    "flashSize": "16MB"
+  },
+  "bootloadCommand": {
+    "enabled": true,
+    "command": "BOOTLOAD",
+    "baudrate": 115200,
+    "timeout": 2000,
+    "description": "Sent before bootloader to disable peripherals"
+  },
+  "firmware": {
+    "bootloader": {
+      "file": "firmware/bootloader.bin",
+      "address": "0x0"
+    },
+    "partitions": {
+      "file": "firmware/partitions.bin",
+      "address": "0x8000"
+    },
+    "application": {
+      "file": "firmware/firmware.bin",
+      "address": "0x10000"
+    }
+  }
+}
